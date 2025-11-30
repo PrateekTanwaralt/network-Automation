@@ -4,9 +4,9 @@ from getpass import getpass
 username = input(' Enter your username" ')
 password = getpass("Enter your password: ")
 
-deviceinfo = int(input("Enter the number of devices that you would like to connect to: "))
+deviceinfo = int(input("Enter the number of devices that you would like to connect to: ")) ##"You can specifiy n number of device to connect to"
 
-devicelist = []
+devicelist = [] ##"This is an empty list where the ip addresses of remote device you provide will be appended and the loop will go through those ip's"
 
 for devices in range(0,deviceinfo):
     ip = input(f"Enter the ip address of device that you want to connect to {devices +1 }: ")
@@ -37,5 +37,5 @@ for routers in devicelist:
         print(routecheck)
 
     
-    ssh.save_config()
-    ssh.disconnect()
+    ssh.save_config() ##"To save the config when using netmiko"
+    ssh.disconnect()  ##"To disconnect from the device"
